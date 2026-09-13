@@ -1,5 +1,5 @@
 [project]
-name = "leg-wash"
+name = "footbath"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-leg-wash = "leg_wash:main"
+leg-wash = "footbath:main"
 
 [build-system]
 requires = ["uv_build>=0.11.2,<0.12.0"]
