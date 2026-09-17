@@ -9,7 +9,11 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
+    "polars>=1.44.2",
     "pydantic>=2.13.4",
+    "pyhumps>=3.8.0",
+    "sqlalchemy>=2.0.53",
+    "typer>=0.27.2",
     "zeep[async]>=4.3.3",
 ]
 
