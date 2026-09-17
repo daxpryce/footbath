@@ -14,8 +14,9 @@ zeep returned object to our own model. by convention we will use all of the same
 but converting the PascalCase field names into lower_snake_case, and occasionally mapping invalid names (to python) to 
 valid names.
 """
-class ZeepOps:
 
+
+class ZeepOps:
     """
     Some of the field names returned by Washington State Legislature have reserved words as their name
     (e.g.: Amendment(..., Type = 'Floor', ...))
@@ -24,7 +25,10 @@ class ZeepOps:
 
     See `Amendment` as an example for our override mapping.
     """
-    zeep_aliases: ClassVar[Mapping[str, str]] = {}  # empty by default, but dataclasses that mix this in can override
+
+    zeep_aliases: ClassVar[
+        Mapping[str, str]
+    ] = {}  # empty by default, but dataclasses that mix this in can override
 
     @classmethod
     def from_zeep(cls, item: Mapping[str, Any]) -> Self:
@@ -39,5 +43,3 @@ class ZeepOps:
         # Python's type system cannot describe the dynamically generated
         # dataclass constructor arguments here.
         return cls(**renamed)  # type: ignore[call-arg]
-
-

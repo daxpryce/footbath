@@ -7,6 +7,7 @@ from .zeep_ops import ZeepOps
 
 __all__ = ["Amendment"]
 
+
 @dataclass
 class Amendment(ZeepOps):
     zeep_aliases: ClassVar[Mapping[str, str]] = {
@@ -28,4 +29,3 @@ class Amendment(ZeepOps):
     htm_url: str
     pdf_url: str
     agency: str
-

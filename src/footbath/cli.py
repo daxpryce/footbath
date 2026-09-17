@@ -7,5 +7,3 @@ def preflight_check() -> bool:
 
 def cli() -> None:
     pass
-
-

@@ -9,11 +9,12 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
+    "poethepoet>=0.48.0",
     "polars>=1.44.2",
-    "pydantic>=2.13.4",
     "pyhumps>=3.8.0",
-    "sqlalchemy>=2.0.53",
+    "sqlalchemy>=2.0.53", # <-- not sure if still necessary, leaving it for now
     "typer>=0.27.2",
+    "typos>=1.50.2",
     "zeep[async]>=4.3.3",
 ]
 
@@ -28,7 +29,16 @@ build-backend = "uv_build"
 dev = [
     "jupyter>=1.1.1",
     "notebook>=7.6.1",
-    "poe>=0.1.0",
     "ruff>=0.16.0",
     "ty>=0.0.63",
 ]
+
+[tool.poe.tasks]
+format = "ruff format"
+lint = "ruff check"
+typecheck = "ty check"
+typocheck = "typos"
+check = ["lint", "typecheck", "typocheck"]
+
+[tool.poe.executor]
+type = "uv" # Use the uv executor for all tasks by default
